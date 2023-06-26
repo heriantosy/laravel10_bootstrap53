@@ -1,5 +1,6 @@
 @extends('layout.main')
 @section('content')
+<h3>Data Guru</h3>
 <div class="card">
 <div class="card-header">
 <button type="button" class="btn btn-sm btn-primary">

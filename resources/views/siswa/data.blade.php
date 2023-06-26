@@ -1,5 +1,7 @@
 @extends('layout.main')
 @section('content')
+
+<h3>Data Siswa</h3>
 <div class="card">
 <div class="card-header">
 <button type="button" class="btn btn-sm btn-primary">
@@ -17,7 +19,7 @@
     </thead>
 
     <tbody>
-        @foreach($guru as $row)
+        @foreach($siswa as $row)
         <tr>
             <td>{{ $loop->iteration }}</td>
             <td>{{ $row->nama_siswa }}</td>
