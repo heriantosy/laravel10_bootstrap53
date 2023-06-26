@@ -4,7 +4,9 @@
    c. pilihan otomatis  (3,4,6) akan dibuat otomatis 
 
 
-
+3. php artisan make:factory SiswaFactory
+4. php artisan make:seeder SiswaSeeder
+5. php artisan db:seed --class=SiswaSeeder
 
 
 

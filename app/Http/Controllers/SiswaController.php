@@ -43,7 +43,6 @@ class SiswaController extends Controller
         
     }
 
-
     public function update(UpdateSiswaRequest $request, Siswa $siswa, $id_siswa)
     {
         $data = $siswa->find($id_siswa);
@@ -59,6 +58,6 @@ class SiswaController extends Controller
     {
         $data = $siswa->find($id_siswa);    
         $data->delete();
-        return redirect('siswa')->with('msg', 'Hapus Sukses');
+        return redirect('siswa')->with('msg', 'Hapus'. $data->nama_siswa.' berhasil');
     }
 }
