@@ -10,7 +10,7 @@ class GuruController extends Controller
 {
     public function index()
     {
-        return view ('guru.data')->with([
+        return view ('guru.index')->with([
             'guru' => Guru::all()
         ]);
     }

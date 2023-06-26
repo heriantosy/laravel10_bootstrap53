@@ -4,8 +4,8 @@
 <h3>Data Siswa</h3>
 <div class="card">
 <div class="card-header">
-<button type="button" class="btn btn-sm btn-primary">
-        <i class="fas fa-plus-circle">Add</i>
+<button type="button" class="btn btn-sm btn-success" onclick="window.location='{{ url('siswa/add') }}'">
+        <i class="fas fa-plus-circle"></i> Add
 </button>
 </div>
 <div class="card-body">

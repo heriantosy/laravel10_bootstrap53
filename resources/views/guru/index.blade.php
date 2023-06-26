@@ -3,11 +3,17 @@
 <h3>Data Guru</h3>
 <div class="card">
 <div class="card-header">
-<button type="button" class="btn btn-sm btn-primary">
-        <i class="fas fa-plus-circle">Add</i>
+<button type="button" class="btn btn-sm btn-primary"  onclick="window.location='{{ url('siswa/add') }}'">
+  
+    <i class="fas fa-plus-circle">Add</i>
 </button>
 </div>
 <div class="card-body">
+  @if (session('msg')) 
+    <div class="alert alert-success alert-dismissible fade-show" role="alert">
+  <button class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  @endif
   <table class="table table-sm table-stripped table-bordered">
     <thead>
         <tr>
@@ -16,7 +22,6 @@
             <th>Genre</th>
         </tr>
     </thead>
-
     <tbody>
         @foreach($guru as $row)
         <tr>

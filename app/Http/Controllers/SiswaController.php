@@ -8,9 +8,6 @@ use App\Http\Requests\UpdateSiswaRequest;
 
 class SiswaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         return view ('siswa.index')->with([
@@ -18,20 +15,23 @@ class SiswaController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreSiswaRequest $request)
     {
-        //
+       $validata=$request->validated();
+       $siswa = new Siswa;
+       $siswa->id_siswa     = $request->id_siswa;
+       $siswa->nama_siswa   = $request->nama_siswa;
+       $siswa->alamat       = $request->alamat;
+       $siswa->phone        = $request->phone;
+       $siswa->gender       = $request->gender;
+       $siswa->save();
+       return redirect('siswa')->with('msg', 'Add Sukses');
+
     }
 
     /**
