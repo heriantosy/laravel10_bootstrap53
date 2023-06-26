@@ -1,0 +1,4 @@
+1. php artisan route:list
+2. a. php artisan make:model
+   b. Guru
+   c. pilihan otomatis  (3,4,6) akan dibuat otomatis 
