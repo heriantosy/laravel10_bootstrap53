@@ -29,6 +29,6 @@ Route::put('siswa/{id}', [SiswaController::class, 'update']);
 Route::delete('siswa/{id}', [SiswaController::class, 'destroy']);
 
 
-// Route::resource('guru', GuruController::class);
+Route::resource('guru', GuruController::class);
 
 

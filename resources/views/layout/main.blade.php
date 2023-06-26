@@ -24,14 +24,16 @@
                 <i class="fas fa-tachometer-alt"></i> Home</a>
                 </li>
 
-                <li class="nav-item">
-                <a class="nav-link {{ request()->segment('1') =='guru'  ? 'active' : '' }}" aria-current="page" href="{{ url('guru') }}">
-                <i class="fas fa-user"></i> Guru</a>
-                </li>
 
                 <li class="nav-item">
                 <a class="nav-link {{ request()->segment('1') =='siswa'  ? 'active' : '' }}" aria-current="page" href="{{ url('siswa') }}">
                 <i class="fas fa-user"></i> Siswa</a>
+                </li>
+
+                
+                <li class="nav-item">
+                <a class="nav-link {{ request()->segment('1') =='guru'  ? 'active' : '' }}" aria-current="page" href="{{ url('guru') }}">
+                <i class="fas fa-user"></i> Guru</a>
                 </li>
 
             </ul>
