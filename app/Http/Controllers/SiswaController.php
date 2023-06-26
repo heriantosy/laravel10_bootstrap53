@@ -34,33 +34,23 @@ class SiswaController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Siswa $siswa)
+    public function show(Siswa $siswa, $id_siswa)
     {
-        //
+        echo $id_siswa;
+        // $data = $siswa->find($id_siswa);
+        // return view('siswa.edit')->with([
+        //     'id_siswa' => $id_siswa,
+        //     'nama_siswa' => $data->nama_siswa,            
+        // ]);
+        
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Siswa $siswa)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(UpdateSiswaRequest $request, Siswa $siswa)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Siswa $siswa)
     {
         //
