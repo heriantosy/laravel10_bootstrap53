@@ -19,6 +19,7 @@
     <thead>
         <tr>
             <th>No</th>
+            <th>ID Siswa</th>
             <th>Nama Siswa</th>
             <th>Genre</th>
             <th>Aksi</th>            
@@ -29,6 +30,7 @@
         @foreach($siswa as $row)
         <tr>
             <td>{{ $loop->iteration }}</td>
+            <td>{{ $row->id_siswa }}</td>
             <td>{{ $row->nama_siswa }}</td>
             <td>{{ ($row->gender=='M') ? 'Male' : 'Female' }}</td>
             <td>

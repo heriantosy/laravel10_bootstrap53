@@ -19,6 +19,11 @@ class UpdateSiswaRequest extends FormRequest
         return [
             'nama_siswa'    => 'required',
             'alamat'        => 'required',
+            //'email'       => [
+            //'required',
+            // Rule::unique('siswa','email')->ignore($this->id_siswa, 'id_siswa'),
+            //'email'
+            // ],
             'gender'        => 'required',
             'phone'         => 'required'
         ];
