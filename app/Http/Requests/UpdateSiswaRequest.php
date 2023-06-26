@@ -11,18 +11,38 @@ class UpdateSiswaRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
-     */
     public function rules(): array
     {
         return [
-            //
+            'nama_siswa'    => 'required',
+            'alamat'        => 'required',
+            'gender'        => 'required',
+            'phone'         => 'required'
+        ];
+    }
+
+    //ubah ke pesan indonesia
+    public function messages(): array
+    {
+        return [
+            'nama_siswa.required'   => ':attribute Tidak Boleh Kosong',
+            'alamat.required'       => ':attribute Tidak Boleh Kosong',
+            'gender.required'       => ':attribute Tidak Boleh Kosong',
+            'phone.required'        => ':attribute Tidak Boleh Kosong',
+            'id_siswa.unique'       => 'Sudah Ada',            
+        ];
+    }
+
+    public function attributes(): array
+    {
+        return [
+            'nama_siswa'   => 'Nama Siswa',  
+            'alamat'       => 'Alamat',  
+            'gender'       => 'Gender',    
+            'phone'        => 'Handphone',       
         ];
     }
 }

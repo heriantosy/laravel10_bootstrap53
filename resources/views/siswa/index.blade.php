@@ -9,6 +9,12 @@
 </button>
 </div>
 <div class="card-body">
+  @if (session('msg')) 
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Berhasil</strong> {{ session('msg') }}
+      <button class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  @endif
   <table class="table table-sm table-stripped table-bordered">
     <thead>
         <tr>
@@ -26,9 +32,18 @@
             <td>{{ $row->nama_siswa }}</td>
             <td>{{ ($row->gender=='M') ? 'Male' : 'Female' }}</td>
             <td>
-              <button onclick="window.location='{{ url('siswa/'.$row->id_siswa) }}'" class="btn btn-sn btn-warning" title="Edit Data">
+              <button onclick="window.location='{{ url('siswa/'.$row->id_siswa) }}'" type="button" class="btn btn-sm btn-warning" title="Edit Data">
                 <i class="fas fa-edit"></i>
               </button>
+
+              <form onsubmit="return deleteData('{{ $row->nama_siswa }}')" style="display: inline" method="POST"  action="{{ url('siswa/'.$row->id_siswa) }}">
+                @csrf
+                @method('DELETE')
+                <button  type="submit"  title="Hapus Data" class="btn btn-danger btn-sm">
+                <i class="fas fa-trash-alt"></i>
+                </button>
+               
+              </form>
             </td>
         </tr>
         @endforeach
@@ -36,4 +51,12 @@
   </table>
 </div>
 </div>
+
+<script>
+  function deleteData(name){
+    pesan = confirm('Yakin data dengan nama ${name} ini dihapus?');
+    if(pesan) return true;
+    else return false;
+  }
+</script>
 @endsection

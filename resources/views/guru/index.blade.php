@@ -9,10 +9,11 @@
 </button>
 </div>
 <div class="card-body">
-  @if (session('msg')) 
-    <div class="alert alert-success alert-dismissible fade-show" role="alert">
-  <button class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
+@if (session('msg')) 
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Berhasil</strong> {{ session('msg') }}
+      <button class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
   @endif
   <table class="table table-sm table-stripped table-bordered">
     <thead>

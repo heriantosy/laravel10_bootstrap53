@@ -16,7 +16,9 @@ class StoreSiswaRequest extends FormRequest
         return [
             'id_siswa'      => 'required|unique:siswa,id_siswa|min:2|max:8',
             'nama_siswa'    => 'required',
-            'alamat'        => 'required'
+            'alamat'        => 'required',
+            'gender'        => 'required',
+            'phone'         => 'required'
         ];
     }
 

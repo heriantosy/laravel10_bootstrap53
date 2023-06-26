@@ -24,6 +24,6 @@ Route::get('/siswa/add', function () {
 Route::resource('siswa', SiswaController::class);
 
 
-Route::resource('guru', GuruController::class);
+// Route::resource('guru', GuruController::class);
 
 

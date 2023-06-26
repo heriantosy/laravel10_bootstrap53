@@ -4,13 +4,13 @@
 <h3>Edit Data</h3>
 <div class="card">
   <div class="card-header">
-    <button type="button" class="btn btn-sm btn-primary" 
+    <button type="button" class="btn btn-sm btn-success" 
     onclick="window.location='{{ url('siswa') }}'">
-            <i class="fas fa-plus-circle">Kembali</i>
+            <i class="fas fa-plus-circle"></i> Kembali
     </button>
     </div>
     <div class="card-body">
-    <form method="POST" action="{{ url('siswa') }}">
+    <form method="POST" action="{{ url('siswa/'.$id_siswa) }}">
       @csrf
       @method('PUT')
             <div class="row mb-3">
@@ -35,12 +35,13 @@
             <div class="row mb-3">
               <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
               <div class="col-sm-10">
+              <textarea class="form-control form-control-sm @error('alamat') is-invalid @enderror" id="alamat" name="alamat" cols="30" rows="10"></textarea>
               @error('alamat')
                 <div class="invalid-feedback">
                   {{ $message }}
                 </div>
                 @enderror
-              <textarea class="form-control form-control-sm @error('alamat') is-invalid @enderror" id="alamat" name="alamat" cols="30" rows="10"></textarea>
+             
               </div>
             </div>
 
