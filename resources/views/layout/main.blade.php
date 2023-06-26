@@ -30,8 +30,8 @@
                 </li>
 
                 <li class="nav-item">
-                <a class="nav-link {{ request()->segment('1') =='student'  ? 'active' : '' }}" aria-current="page" href="{{ url('student') }}">
-                <i class="fas fa-user"></i> Students</a>
+                <a class="nav-link {{ request()->segment('1') =='siswa'  ? 'active' : '' }}" aria-current="page" href="{{ url('siswa') }}">
+                <i class="fas fa-user"></i> Siswa</a>
                 </li>
 
             </ul>
