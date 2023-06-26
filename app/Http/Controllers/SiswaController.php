@@ -13,7 +13,7 @@ class SiswaController extends Controller
      */
     public function index()
     {
-        return view ('siswa.data')->with([
+        return view ('siswa.index')->with([
             'siswa' => Siswa::all()
         ]);
     }

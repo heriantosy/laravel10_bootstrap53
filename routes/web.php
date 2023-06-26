@@ -17,7 +17,13 @@ Route::get('/home', function () {
     return view('layout.home');
 });
 
+Route::get('/siswa/add', function () {
+    return view('siswa.add');
+});
+
 Route::resource('siswa', SiswaController::class);
+
+
 Route::resource('guru', GuruController::class);
 
 
