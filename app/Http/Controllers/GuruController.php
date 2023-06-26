@@ -10,8 +10,9 @@ class GuruController extends Controller
 {
     public function index()
     {
+        $data = Guru::paginate(10)->fragment('guru');
         return view ('guru.index')->with([
-            'guru' => Guru::all()
+            'guru' => $data
         ]);
     }
     public function store(StoreGuruRequest $request)
