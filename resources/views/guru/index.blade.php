@@ -27,9 +27,14 @@
     </thead>
 
     <tbody>
+      <!-- agar nomor berjalan pada pagination -->
+      @php
+        $nomor = 1 + (($guru->currentPage() - 1) * $guru->perPage()); 
+      @endphp
         @foreach($guru as $row)
         <tr>
-            <td>{{ $loop->iteration }}</td>
+            <!-- <td>{{ $loop->iteration }}</td> -->
+            <td>{{ $nomor++ }}</td>
             <td>{{ $row->id_guru }}</td>
             <td>{{ $row->nama_guru }}</td>
             <td>{{ ($row->gender=='M') ? 'Male' : 'Female' }}</td>
