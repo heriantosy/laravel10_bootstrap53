@@ -14,7 +14,4 @@ class Guru extends Model
     public $incrementing = false;
     public $timestamps = true;
 
-
-
-
 }
