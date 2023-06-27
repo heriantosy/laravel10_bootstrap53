@@ -15,6 +15,15 @@
       <button class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
   @endif
+
+  <form method="GET" action="">
+    <div class="row mb-3">
+    <label for="search" class="col-sm-2 col-form-label">Cari Data</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control form-control-sm"  placeholder="Pencarian" name="search" autofocus value="{{ $search }}">
+    </div>
+    </div>
+  </form>
   <table class="table table-sm table-stripped table-bordered">
     <thead>
         <tr>
@@ -56,7 +65,9 @@
         @endforeach
     </tbody>
   </table>
-  {{ $guru->links() }}
+  <!-- {{ $guru->links() }} -->
+  {!! $guru->appends(Request::except('page'))->render() !!}
+
 </div>
 </div>
 

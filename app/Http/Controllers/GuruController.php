@@ -5,14 +5,23 @@ namespace App\Http\Controllers;
 use App\Models\Guru;
 use App\Http\Requests\StoreGuruRequest;
 use App\Http\Requests\UpdateGuruRequest;
+use illuminate\Http\Request;
 
 class GuruController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $data = Guru::paginate(10)->fragment('guru');
+        $search = $request->query('search');
+        if (!empty($search)){
+            $data = Guru::where('guru.id_guru', 'like', '%' . $search . '%')
+                ->orWhere('siswa.nama_guru', 'like', '%' . $search . '%')
+                ->paginate(10)->onEachSide(2)->fragment('std');
+        }else{
+            $data = Guru::paginate(10)->onEachSide(2)->fragment('std');    
+        }    
         return view ('guru.index')->with([
-            'guru' => $data
+            'guru' => $data,
+            'search' => $search
         ]);
     }
     public function store(StoreGuruRequest $request)
@@ -20,7 +29,7 @@ class GuruController extends Controller
        $validate =$request->validated();
        $Guru = new Guru;
        $Guru->id_guru     = $request->id_guru;
-       $Guru->nama_Guru   = $request->nama_Guru;
+       $Guru->nama_guru   = $request->nama_guru;
        $Guru->alamat       = $request->alamat;
        $Guru->phone        = $request->phone;
        $Guru->gender       = $request->gender;
