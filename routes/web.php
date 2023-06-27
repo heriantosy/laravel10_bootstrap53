@@ -29,11 +29,11 @@ Route::put('siswa/{id}', [SiswaController::class, 'update']);
 Route::delete('siswa/{id}', [SiswaController::class, 'destroy']);
 
 
-Route::resource('guru', GuruController::class);
-// Route::get('guru', [GuruController::class, 'index']);
-// Route::post('guru', [GuruController::class, 'store']);
-// Route::get('guru/{id}', [GuruController::class, 'show']);
-// Route::put('guru/{id}', [GuruController::class, 'update']);
-// Route::delete('guru/{id}', [GuruController::class, 'destroy']);
+// Route::resource('guru', GuruController::class);
+Route::get('guru', [GuruController::class, 'index']);
+Route::post('guru', [GuruController::class, 'store']);
+Route::get('guru/{id}', [GuruController::class, 'show']);
+Route::put('guru/{id}', [GuruController::class, 'update']);
+Route::delete('guru/{id}', [GuruController::class, 'destroy']);
 
 
