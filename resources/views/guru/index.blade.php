@@ -16,7 +16,7 @@
     </div>
   @endif
 
-  <form method="GET" action="">
+  <form method="GET">
     <div class="row mb-3">
     <label for="search" class="col-sm-2 col-form-label">Cari Data</label>
     <div class="col-sm-10">

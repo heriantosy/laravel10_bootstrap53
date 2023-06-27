@@ -11,7 +11,9 @@ class GuruController extends Controller
 {
     public function index(Request $request)
     {
+        // echo"Test";
         $search = $request->query('search');
+        // echo 'dd'. $search;
         if (!empty($search)){
             $data = Guru::where('guru.id_guru', 'like', '%' . $search . '%')
                 ->orWhere('siswa.nama_guru', 'like', '%' . $search . '%')
@@ -24,6 +26,7 @@ class GuruController extends Controller
             'search' => $search
         ]);
     }
+
     public function store(StoreGuruRequest $request)
     {
        $validate =$request->validated();
