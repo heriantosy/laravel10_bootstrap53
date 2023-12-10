@@ -1,7 +1,7 @@
 @extends('layout.main')
 @section('content')
 
-<h3>Data Siswa</h3>
+<h3>Data Pelajaran</h3>
 <div class="card">
 <div class="card-header">
 <button type="button" class="btn btn-sm btn-success" onclick="window.location='{{ url('siswa/add') }}'">
@@ -19,9 +19,9 @@
     <thead>
         <tr>
             <th>No</th>
-            <th>ID Siswa</th>
-            <th>Nama Siswa</th>
-            <th>Genre</th>
+            <th>ID Pelajaran</th>
+            <th>Nama Pelajaran</th>
+            <th>Keterangan</th>
             <th>Aksi</th>            
         </tr>
     </thead>

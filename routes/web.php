@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GuruController;
+use App\Http\Controllers\PelajaranController;
 use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,5 +36,8 @@ Route::post('guru', [GuruController::class, 'store']);
 Route::get('guru/{id}', [GuruController::class, 'show']);
 Route::put('guru/{id}', [GuruController::class, 'update']);
 Route::delete('guru/{id}', [GuruController::class, 'destroy']);
+
+//other way route
+Route::resource('pelajaran', PelajaranController::class);
 
 
