@@ -36,17 +36,23 @@ class KurikulumController extends Controller
 
     public function edit(string $id)
     {
-        //
+        $kurikulum = kurikulum::find($id);
+        return view('kurikulum.edit', compact('kurikulum'));
     }
 
     public function update(Request $request, string $id)
     {
-        //
+        $kurikulum = kurikulum::find($id);
+        $kurikulum->nama_kurikulum = $request->nama_kurikulum;
+        $kurikulum->tahun = $request->tahun;
+        $kurikulum->update();
+        return redirect()->route('kurikulum.index');
     }
 
 
     public function destroy(string $id)
     {
-        //
+         kurikulum::destroy($id);
+         return redirect()->route('kurikulum.index');
     }
 }
