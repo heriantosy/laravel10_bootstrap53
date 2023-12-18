@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GuruController;
+use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KurikulumController;
 use App\Http\Controllers\PelajaranController;
 use App\Http\Controllers\SiswaController;
@@ -42,5 +43,7 @@ Route::delete('guru/{id}', [GuruController::class, 'destroy']);
 Route::resource('pelajaran', PelajaranController::class);
 
 Route::resource('kurikulum', KurikulumController::class);
+
+Route::get('jadwal', [JadwalController::class, 'index'])->name('jadwal.index');
 
 

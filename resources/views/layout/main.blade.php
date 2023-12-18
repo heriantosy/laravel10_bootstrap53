@@ -41,6 +41,11 @@
                 <i class="fas fa-user"></i> Kurikulum</a>
                 </li>
 
+                <li class="nav-item">
+                <a class="nav-link {{ request()->segment('1') =='jadwal'  ? 'active' : '' }}" aria-current="page" href="{{ route('jadwal.index') }}">
+                <i class="fas fa-user"></i> Jadwal</a>
+                </li>
+
             </ul>
             </div>
         </div>
