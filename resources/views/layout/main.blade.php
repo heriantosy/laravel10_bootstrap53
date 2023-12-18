@@ -36,6 +36,11 @@
                 <i class="fas fa-user"></i> Guru</a>
                 </li>
 
+                <li class="nav-item">
+                <a class="nav-link {{ request()->segment('1') =='kurikulum'  ? 'active' : '' }}" aria-current="page" href="{{ route('kurikulum.index') }}">
+                <i class="fas fa-user"></i> Kurikulum</a>
+                </li>
+
             </ul>
             </div>
         </div>

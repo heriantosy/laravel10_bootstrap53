@@ -12,6 +12,6 @@ class GuruSeeder extends Seeder
      */
     public function run(): void
     {
-        Guru::factory()->count(500)->create();
+        Guru::factory()->count(600)->create();
     }
 }
