@@ -11,7 +11,12 @@ class JadwalController extends Controller
 {
     public function index()
     {
-        $jadwal = Jadwal::get();
+        //Query builder biaya
+        $myjadwal   = new Jadwal();
+        $jadwal = $myjadwal->list_jadwal();
+
+        //Menggunakan Eloquent
+        //$jadwal = Jadwal::get();      
        return view('jadwal.index', compact('jadwal'));
     }
 

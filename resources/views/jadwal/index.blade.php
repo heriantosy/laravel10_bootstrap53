@@ -14,6 +14,8 @@
                 <td>Nama Guru</td>
                 <td>Pelajaran</td>
                 <td>Jam Mulai</td>
+               
+                <td>Tanggal</td>
                 <td>Aksi</td>
                 <td>Delete</td>
             </tr>
@@ -22,9 +24,10 @@
             <tbody>
                  <tr>
                     <td>{{ $loop->iteration }} </td>
-                    <td>{{ $rows->guru->nama_guru }}</td>
-                    <td>{{ $rows->pelajaran->nama_pelajaran }}</td>
+                    <td>{{ $rows->nama_guru }}</td>
+                    <td>{{ $rows->nama_pelajaran }}</td>
                     <td>{{ $rows->jam_mulai }} </td>
+                    <td>{{ $rows->created_at }}</td>
                     <td>
                         <a href="{{ route('kurikulum.edit', $rows->id) }}">Edit</a>                                      
                     </td>
