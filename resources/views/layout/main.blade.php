@@ -46,6 +46,11 @@
                 <i class="fas fa-user"></i> Jadwal</a>
                 </li>
 
+                <li class="nav-item">
+                <a class="nav-link {{ request()->segment('1') =='jadwal'  ? 'active' : '' }}" aria-current="page" href="{{ route('logout') }}">
+                <i class="fas fa-user"></i> Logout</a>
+                </li>
+
             </ul>
             </div>
         </div>
