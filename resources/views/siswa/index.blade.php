@@ -82,7 +82,7 @@
             <td>{{ $row->nama_siswa }}</td>
             <td>{{ ($row->gender=='M') ? 'Male' : 'Female' }}</td>
             <td>
-              <button onclick="window.location='{{ url('siswa/'.$row->id_siswa) }}'" type="button" class="btn btn-sm btn-warning" title="Edit Data">
+              <button onclick="window.location='{{ url('siswa/edit/'.$row->id_siswa) }}'" type="button" class="btn btn-sm btn-warning" title="Edit Data">
                 <i class="fas fa-edit"></i>
               </button>
 

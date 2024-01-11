@@ -21,10 +21,6 @@ Route::get('/home', function () {
     return view('layout.home');
 });
 
-Route::get('/siswa/add', function () {
-    return view('siswa.add');
-});
-
 Route::get('/',[AuthController::class,'index'])->name('login');
 Route::post('/proses_login',[AuthController::class,'proses_login'])->name('proses_login');
 Route::get('/logout',[AuthController::class,'log_out'])->name('logout');
@@ -32,9 +28,10 @@ Route::get('/logout',[AuthController::class,'log_out'])->name('logout');
 Route::group(['middleware' => 'auth'], function (){
     // Route::resource('siswa', SiswaController::class);
     Route::get('siswa', [SiswaController::class, 'index']);
-    Route::post('siswa', [SiswaController::class, 'store']);
-    Route::get('siswa/{id}', [SiswaController::class, 'show']);
-    Route::put('siswa/{id}', [SiswaController::class, 'update']);
+    Route::get('siswa/add', [SiswaController::class, 'add']);
+    Route::post('siswa/store', [SiswaController::class, 'store'])->name('siswa/store');
+    Route::get('siswa/edit/{id}', [SiswaController::class, 'edit'])->name('siswa/edit');
+    Route::post('siswa/update', [SiswaController::class, 'update'])->name('siswa/update');;
     Route::delete('siswa/{id}', [SiswaController::class, 'destroy']);
     Route::get('cetak_siswa', [SiswaController::class, 'cetak_siswa'])->name('cetak_siswa');
 

@@ -16,6 +16,11 @@ class SiswaController extends Controller
         ]);
     }
 
+    public function add()
+    {
+        return view ('siswa.add');
+    }
+
     public function store(StoreSiswaRequest $request)
     {
        $validate =$request->validated();
@@ -30,7 +35,7 @@ class SiswaController extends Controller
 
     }
 
-    public function show(Siswa $siswa, $id_siswa)
+    public function edit(Siswa $siswa, $id_siswa)
     {        
         // echo $id_siswa;
         $data = $siswa->find($id_siswa);
@@ -44,9 +49,9 @@ class SiswaController extends Controller
         
     }
 
-    public function update(UpdateSiswaRequest $request, Siswa $siswa, $id_siswa)
+    public function update(UpdateSiswaRequest $request, Siswa $siswa)
     {
-        $data = $siswa->find($id_siswa);
+        $data = $siswa->find($request->id_siswa);
         $data->nama_siswa   = $request->nama_siswa;
         $data->alamat       = $request->alamat;
         $data->phone        = $request->phone;

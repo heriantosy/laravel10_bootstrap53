@@ -10,7 +10,7 @@
     </button>
     </div>
     <div class="card-body">
-    <form method="POST" action="{{ url('siswa') }}">
+    <form method="POST" action="{{ route('siswa/store') }}">
       @csrf
             <div class="row mb-3">
               <label for="id_siswa" class="col-sm-2 col-form-label">ID Siswa</label>
