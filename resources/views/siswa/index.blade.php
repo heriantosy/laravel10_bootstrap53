@@ -60,6 +60,9 @@
       <button class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
   @endif
+  <div>
+    <a class="btn btn-primary btn-sm" href="{{ route('cetak_siswa') }}" target="_BLANK">Cetak Data Siswa</a>
+  </div>
   <table class="table table-sm table-stripped table-bordered">
     <thead>
         <tr>

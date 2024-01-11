@@ -61,4 +61,9 @@ class SiswaController extends Controller
         $data->delete();
         return redirect('siswa')->with('msg', 'Hapus'. $data->nama_siswa.' berhasil');
     }
+
+    public function cetak_siswa(){
+        $siswa = Siswa::get();
+        return view ('siswa.cetak_siswa', compact('siswa'));
+    }
 }

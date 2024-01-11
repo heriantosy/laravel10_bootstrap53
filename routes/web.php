@@ -36,6 +36,7 @@ Route::group(['middleware' => 'auth'], function (){
     Route::get('siswa/{id}', [SiswaController::class, 'show']);
     Route::put('siswa/{id}', [SiswaController::class, 'update']);
     Route::delete('siswa/{id}', [SiswaController::class, 'destroy']);
+    Route::get('cetak_siswa', [SiswaController::class, 'cetak_siswa'])->name('cetak_siswa');
 
 
     // Route::resource('guru', GuruController::class);
